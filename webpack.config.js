@@ -1,5 +1,5 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
@@ -29,7 +29,8 @@ module.exports = {
         usedExports: true,
         sideEffects: true,
     },
-    plugins: [htmlPlugin,
+    plugins: [
+		htmlPlugin,
         new ServiceWorkerWebpackPlugin({
             entry: path.join(__dirname, 'src/sw.js'),
         }),
